@@ -1,10 +1,5 @@
 IUS Official Drum Sequencer
 
-Hardware handoff summary
-
-Project intent
-
-This device is a real time hardware sampler and sequencer with a minimal front panel, a fixed lane based timing layout, and dedicated physical controls per track.
 
 Front panel summary
 
