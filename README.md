@@ -1,6 +1,6 @@
 ## I/US Official Sequencer
 
-https://iusmusic.github.io/IUS-DMS/
+**https://iusmusic.github.io/IUS-DMS/**
 
 ![DMS Preview](DMS%20Preview.png)
 
@@ -86,10 +86,10 @@ Here’s a concise changelog for the feature additions only.
 
 ### How to open the prototype
 
-Step 1. Extract the zip file.
-Step 2. Open the IUS Official Sequencer folder.
-Step 3. Open index.html in a modern browser.
-Step 4. The prototype will load with the main sequencer view.
+  * Step 1. Extract the zip file.
+  * Step 2. Open the IUS Official Sequencer folder.
+  * Step 3. Open index.html in a modern browser.
+  * Step 4. The prototype will load with the main sequencer view.
 
 ### What the prototype does
 
@@ -97,35 +97,34 @@ The prototype provides a multi track step sequencer interface with 31 steps per 
 
 ### How to use the preview
 
-Step 1. Open index.html in your browser.
-Step 2. Click the library button in the top bar.
-Step 3. Load audio files if you want to add custom sounds.
-Step 4. Click a sound in the library to arm it.
-Step 5. Click a step on any track to assign the armed sound.
-Step 6. Use the play button on a track to hear the sequence.
-Step 7. Use stop to reset the track.
-Step 8. Change BPM on a track to alter playback speed.
-Step 9. Use the loop control to keep playback cycling.
-Step 10. Use the theme button in the top bar to switch between dark and light high contrast viewing modes.
+  * Step 1. Open index.html in your browser.
+  * Step 2. Click the library button in the top bar.
+  * Step 3. Load audio files if you want to add custom sounds.
+  * Step 4. Click a sound in the library to arm it.
+  * Step 5. Click a step on any track to assign the armed sound.
+  * Step 6. Use the play button on a track to hear the sequence.
+  * Step 7. Use stop to reset the track.
+  * Step 8. Change BPM on a track to alter playback speed.
+  * Step 9. Use the loop control to keep playback cycling.
+  * Step 10. Use the theme button in the top bar to switch between dark and light high contrast viewing modes.
 
+  * Place your own sample files in the soundbank samples folder.
+  * Supported file types depend on browser audio support. Common examples include wav mp3 and ogg.
+  * Custom files placed in the samples folder appear in the custom category in the sound library.
+  * Suggested naming rules for automatic grouping are shown below.
 
-Place your own sample files in the soundbank samples folder.
-Supported file types depend on browser audio support. Common examples include wav mp3 and ogg.
-Custom files placed in the samples folder appear in the custom category in the sound library.
-Suggested naming rules for automatic grouping are shown below.
-
-Files that start with kick or snare or clap or hihat are treated as drum sounds.
-Files that start with bass are treated as bass sounds.
-Files that start with synth are treated as synth sounds.
-Files that start with fx are treated as effects sounds.
+  * Files that start with kick or snare or clap or hihat are treated as drum sounds.
+  * Files that start with bass are treated as bass sounds.
+  * Files that start with synth are treated as synth sounds.
+  * Files that start with fx are treated as effects sounds.
 
 
 ### License
 
 MIT LICENSE
 
-Copyright 2026 Pezhman Farhangi
-IUS Music
+**Copyright 2026 Pezhman Farhangi**
+**IUS Music**
 
 Permission is hereby granted free of charge to any person obtaining a copy of this software and associated documentation files known as the Software to deal in the Software without restriction including without limitation the rights to use copy modify merge publish distribute sublicense and or sell copies of the Software and to permit persons to whom the Software is furnished to do so subject to the following conditions.
 
