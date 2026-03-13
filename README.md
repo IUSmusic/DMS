@@ -7,8 +7,6 @@ https://iusmusic.github.io/IUS-DMS/
 
 ### Main files
 
-index.html is the prototype application.
-README.txt is the main project guide and explains how to place your own sample files.
 LICENSE.txt
 TRADEMARK NOTICE.txt
 Hardware Layout.txt
