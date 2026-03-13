@@ -9,9 +9,6 @@
 ![DMS Preview](DMS%20Preview.png)
 
 
-## Change Logs:
-Here’s a concise changelog for the feature additions only.
-
 ## Changelog
 
  13 March 2026
