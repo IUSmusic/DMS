@@ -78,11 +78,11 @@ Here’s a concise changelog for the feature additions only.
 
 ### Main files
 
-LICENSE.txt
-TRADEMARK NOTICE.txt
-Hardware Layout.txt
-Schematic.txt 
-hardware.txt
+  * LICENSE.txt
+  * TRADEMARK NOTICE.txt
+  * Hardware Layout.txt
+  * Schematic.txt 
+  * hardware.txt
 
 ### How to open the prototype
 
