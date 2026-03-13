@@ -2,6 +2,9 @@
 
 https://iusmusic.github.io/IUS-DMS/
 
+![DMS Preview](DMS%20Preview.png)
+
+
 ### Main files
 
 index.html is the prototype application.
