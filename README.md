@@ -1,8 +1,8 @@
-IUS Official Sequencer
+### IUS Official Sequencer
 
 https://iusmusic.github.io/IUS-DMS/
 
-Main files
+## Main files
 
 index.html is the prototype application.
 README.txt is the main project guide and explains how to place your own sample files.
@@ -12,18 +12,18 @@ Hardware Layout.txt
 Schematic.txt 
 hardware.txt
 
-How to open the prototype
+## How to open the prototype
 
 Step 1. Extract the zip file.
 Step 2. Open the IUS Official Sequencer folder.
 Step 3. Open index.html in a modern browser.
 Step 4. The prototype will load with the main sequencer view.
 
-What the prototype does
+## What the prototype does
 
 The prototype provides a multi track step sequencer interface with 31 steps per track. It lets you open the sound library, preview sounds, assign sounds to steps, upload a default track sound, record default track audio from microphone input where supported, start and stop playback, change BPM, use looping, inspect assignments, and switch between dark and light high contrast themes.
 
-How to use the preview
+## How to use the preview
 
 Step 1. Open index.html in your browser.
 Step 2. Click the library button in the top bar.
@@ -48,7 +48,9 @@ Files that start with synth are treated as synth sounds.
 Files that start with fx are treated as effects sounds.
 
 
-MIT License
+## License
+
+MIT LICENSE
 
 Copyright 2026 Pezhman Farhangi
 IUS Music
@@ -60,7 +62,7 @@ The above copyright notice and this permission notice shall be included in all c
 The Software is provided as is without warranty of any kind express or implied including but not limited to the warranties of merchantability fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim damages or other liability whether in an action of contract tort or otherwise arising from out of or in connection with the Software or the use or other dealings in the Software.
 
 
-Trademark and brand notice
+## Trademark and brand notice
 
 IUS and IUS Music are protected brand identifiers associated with the official IUS project.
 
