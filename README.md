@@ -34,10 +34,10 @@ This is an early public prototype shared to document ideas, test workflows, and 
 - Microphone recording where supported
 
 ## Roadmap
-- Better project structure
-- Demo video / GIF
+- I will continue ti add features and update the project.
 - Clear hardware documentation
-- Versioned releases
+- Versioned releases 
+
 ## Changelog
 
  13 March 2026
