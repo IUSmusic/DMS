@@ -49,6 +49,24 @@ This is an early public prototype shared to organise ideas, test workflows, docu
 
 ## Changelog
 
+**14 March 2026**
+- Kept the app as a 5-track sequencer
+- Decoupled the keyboard size from the 31-step sequencer
+
+- Replaced the limited keyboard with a full piano keyboard
+- Upgraded the keyboard path to use a soundfont-backed piano with fallback behavior
+
+- Added a new Record Monitor below the master track
+- Wired it so it shows only armed or recording tracks
+- Made the monitor responsive so multiple armed tracks are visible as needed
+- Added track color mapping so recordings are visually tied to their source track
+- Moved the Settings inside the Library / Sound Bank monitor
+
+- Reduced the left monitor/bank panel width by about 10%
+- Added Skip Back, Play/Pause, and Skip Forward controls
+- Wired the new UI so the controls and monitor behavior are connected
+- Kept the master track as controller rather than using it as the recording lane
+
  **13 March 2026**
 
   - Added a dedicated master track panel above the regular tracks
