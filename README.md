@@ -177,7 +177,7 @@ You’re right. Here it is in the same Markdown style as the Revision B section.
 
 * Step 15. Use the theme/display controls if available to switch viewing modes.
 
-## Custom sounds
+**Custom sounds**
 
 - Place your own sample files in the soundbank samples folder.
 
