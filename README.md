@@ -145,7 +145,75 @@ You’re right. Here it is in the same Markdown style as the Revision B section.
 * Wired the EQ section to the **master bus**
 
 
-# I/US DMS
+## How to use the preview
+
+* Step 1. Open index.html in your browser.
+
+* Step 2. Use the main monitor and top controls to access the current workspace.
+
+* Step 3. Open the Library / Sound Bank panel to browse available sounds.
+
+* Step 4. Load audio files if you want to add custom sounds.
+
+* Step 5. Click a sound in the library to arm or assign it for use.
+
+* Step 6. Click a step on any track to place the selected sound into the sequence.
+
+* Step 7. Use the track Play button to hear that track.
+
+* Step 8. Use Stop to stop playback and reset the position as needed.
+
+* Step 9. Change BPM to alter playback speed.
+
+* Step 10. Use the Loop control to keep playback cycling.
+
+* Step 11. Use the transport controls to move through playback.
+
+* Step 12. Use the track controls to adjust playback and performance behavior.
+
+* Step 13. Use the Library / Sound Bank monitor settings area for available display and sound options.
+
+* Step 14. Use the full piano keyboard to play notes across a wider range.
+
+* Step 15. Use the theme/display controls if available to switch viewing modes.
+
+## Custom sounds
+
+- Place your own sample files in the soundbank samples folder.
+
+- Supported file types depend on browser audio support. Common examples include:
+
+- wav
+- mp3
+- ogg
+
+- Custom files placed in the samples folder appear in the Custom category in the sound library.
+
+- Suggested naming rules for automatic grouping
+
+- Files that start with kick, snare, clap, or hihat are treated as drum sounds.
+
+- Files that start with bass are treated as bass sounds.
+
+- Files that start with synth are treated as synth sounds.
+
+- Files that start with fx are treated as effects sounds.
+
+## Notes
+
+* Browser audio behavior may vary slightly depending on the browser.
+
+* Some features may require user interaction before audio playback is allowed.
+
+* Microphone-related features depend on browser permissions.
+
+* Support for custom formats depends on the browser’s built-in audio decoding capabilities.
+
+
+I can also rewrite this into a cleaner README-style section for your .md file.
+
+
+## I/US DMS
 
 **I/US-DMS is a browser-based prototype of the I/US Official Sequencer**
 
