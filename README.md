@@ -1,7 +1,8 @@
-**I/US Official Sequencer**
-![DMS Preview](DMS%20Preview01.png)
-![DMS Preview](DMS%20Preview02.png)
-![DMS Preview](DMS%20Preview03.png)
+## I/US Official Sequencer ##
+
+* ![DMS Preview](DMS%20Preview01.png)
+* ![DMS Preview](DMS%20Preview02.png)
+* ![DMS Preview](DMS%20Preview03.png)
 
 **Live demo**
   * **[Open in New Page](https://iusmusic.github.io/IUS-DMS/)**
