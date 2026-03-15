@@ -324,18 +324,15 @@ All rights in the **I/US**, **IUS**, and **IUS Music** brand identity are reserv
 Any fork, modified build, redistributed version, or commercial version must not imply official affiliation with or endorsement by the official **I/US** project unless written permission is given.
 
 
-## Open-source direction
+## License
 
-This project is intended to grow as an open-source system while still protecting the official I/US identity.
+This repository is released under the **I/US Music Source-Available License 1.0**.
 
-The code may evolve publicly.  
-The official brand, official device identity, and official release direction remain protected separately.
+You may view the code, study it, and use it for private internal evaluation.
 
-## Copyright
+You may not sell it, redistribute it, sublicense it, publish modified versions of it, or use it commercially without prior written permission from **Pezhman Garhangi** **I/US Music**.
 
-**Copyright (c) 2026 Pezhman Farhangi**  
-**I/US Music**
+If this repository is public on GitHub, GitHub users may still have limited rights to view and fork it through GitHub’s own platform functions, as required by GitHub’s Terms of Service.
 
-This Source Code Form is subject to the terms of the Mozilla Public  
-License, v. 2.0. If a copy of the MPL was not distributed with this  
-file, You can obtain one at https://mozilla.org/MPL/2.0/.
+See `LICENSE.md` and `TRADEMARKS.md` for full terms.
+
