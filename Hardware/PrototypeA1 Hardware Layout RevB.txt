@@ -1,0 +1,261 @@
+IUS Official Drum Sequencer
+Technical hardware layout revision B
+
+Device overview
+
+The device is a modular hardware sampler and compact DAW workstation with five track lanes, a master section, a touch monitor, stereo track recording, microphone sampling, soundbank based instrument playback, external monitor support, and removable storage expansion.
+
+Revision B replaces the earlier single DSP focused layout with a system that separates application UI work from deterministic real time audio work.
+
+System sections
+
+Section 1
+Main compute and UI board
+
+Main processor class
+Embedded Linux class compute module or equivalent
+
+Main responsibilities
+Touch UI and display composition
+Theme engine
+Waveform monitor rendering
+Project and file system management
+Soundbank browser
+Piano and instrument UI views
+External HDMI output handling
+Touch edit interaction
+Storage indexing
+Communication with the real time audio engine
+
+Main digital interfaces
+High speed interconnect to audio engine board
+Display interface for integrated screen
+HDMI for external monitor
+USB host and device support
+Storage interface depending on chosen compute module
+I2C or SPI for touch controller
+
+Section 2
+Real time audio engine board
+
+Main processor class
+High performance MCU or DSP processor
+
+Main responsibilities
+Transport timing
+Sample triggering
+Looping
+Soundbank voice engine
+Per track routing
+Per track stereo record print
+Microphone capture and hold to sample workflow
+Master stereo mix record
+Waveform envelope generation for monitor drawing
+Synchronization with control surface and compute board
+
+Main digital interfaces
+I2S or TDM to codec section
+Clock distribution
+Shared memory or message passing link to compute board
+Local RAM or SDRAM for active audio buffers
+GPIO or serial links for low latency control sync if needed
+
+Section 3
+Audio I O and analog board
+
+Main responsibilities
+Mic preamp path
+Stereo line input conditioning
+ADC and DAC conversion
+Output filtering
+Line driver stage
+Headphone amplifier
+Clean analog grounding and rail separation
+
+Input side path
+Mic input to protection to low noise preamp to filter to converter routing
+Stereo input pair 1 left and right to protection to buffer to anti alias filter
+Stereo input pair 2 left and right to protection to buffer to anti alias filter
+Stereo input pair 3 left and right to protection to buffer to anti alias filter
+
+Digital audio path
+Converter domain to real time audio engine by I2S or TDM
+Real time audio engine back to converter domain for DAC playback
+
+Output side path
+DAC stereo output to output filter to line driver to stereo master out left and right
+DAC stereo output to headphone amplifier to headphone out
+
+Section 4
+Control surface board
+
+Main responsibilities
+Track buttons and status LEDs
+Master transport and record buttons
+Jog or scroll wheel at right side for precise DAW navigation
+Grid and snap buttons if dedicated controls are used
+Optional encoders and analog controls
+
+Per track controls
+Arm
+Track Rec
+Mic Rec
+Play
+Loop
+Track select or settings access as required
+
+Master controls
+Mic Rec
+Mix Rec
+Play
+Stop
+Pause
+Master effects enable and adjustment controls
+Master volume
+Sustain
+
+Control connection methods
+GPIO where practical
+Shift registers or expanders for button counts
+LED drivers for lane status and progress lighting
+Encoders or high resolution wheel interface for jog control
+Multiplexers for analog controls if used
+
+Section 5
+Display and touch board
+
+Main responsibilities
+Primary touch monitor
+Waveform monitor lanes
+Timeline and grid rendering
+Track waveform view and selection
+Future punch in or edit point interaction
+Theme support and brightness control
+
+Monitor behavior
+One fixed monitor frame
+Adaptive lane height based on engaged track count
+Waveform lane tied to track number
+Track 1 red
+Track 2 blue
+Track 3 white
+Track 4 red
+Track 5 blue
+Flat line when silent
+Waveform when signal exists
+Left to right record fill behavior
+Completed waveform remains visible after stop
+Red playhead and optional edit cursor
+
+Front panel structure
+
+Top monitor zone
+Large touch monitor spanning the waveform DAW area and key editing views
+Grid overlays available for editing
+Transport and timeline indicators visible here
+
+Master section
+Dedicated master strip above or adjacent to regular track lanes depending on final mechanical packaging
+Separate Mic Rec and Mix Rec controls
+Master effects and transport grouping kept physically distinct from per track controls
+
+Track section
+Five repeated track modules laid out consistently
+Each module contains Arm Track Rec Mic Rec Play and Loop controls
+Each track lane aligns with the main waveform monitor logic and step or tile interaction surface
+
+Right side editing zone
+Dedicated jog or scroll wheel for precise waveform movement and surgical edits
+Modifier controls for zoom and snap can sit nearby
+This zone is essential because touch alone is not precise enough for all edits on the go
+
+Rear or side edge connections
+
+Required digital and storage connections
+HDMI output
+Two USB C ports minimum
+USB A host expansion
+More than one micro SD card slot
+
+Required audio and power connections
+DC power input
+Existing analog audio inputs and outputs retained unless revised by later hardware decision
+Headphone output
+MIDI ports as currently planned or revised to USB MIDI where appropriate
+
+Clock and audio rules
+
+System audio clock
+Single fixed audio clock domain
+
+Recommended operating target
+24 bit 48 kHz minimum
+
+Reason
+Stable real time operation under heavy system load
+Cleaner routing and predictable latency
+Consistent monitor and recorder behavior
+
+Storage and buffering
+
+Long term storage
+Internal compute storage
+Micro SD project media
+Micro SD library media
+External USB storage by supported folder structure
+
+Used for
+Projects
+Samples
+Soundbanks
+Recorded clips
+Exports
+Backups
+
+Real time working memory
+Dedicated RAM or SDRAM on the audio engine side
+System RAM on the compute side for UI and waveform data
+
+Real time rule
+Playback and record buffers used in the hardest audio path must remain memory backed during active operation
+Direct removable media reads must not sit in the tightest deterministic playback path
+
+Master bus and track routing
+
+Per track path
+Source select to track engine to optional track processing to track record tap to stereo track out
+
+Master path
+All track stereo outs to stereo master bus to master effects to master recorder tap to DAC and outputs
+
+Routing rules
+Track Rec prints the selected track behavior in stereo
+Track Mic Rec samples from microphone while held
+Master Mix Rec captures the final stereo mix
+Uploaded full recordings can be assigned as waveform tracks
+
+Analog and digital split
+
+Analog domain
+Preamps
+Input protection and buffering
+Filters
+Line driving
+Headphone amp
+Clean analog rails
+
+Digital domain
+Scheduling
+Playback engines
+Soundbank logic
+Waveform rendering
+Touch editing
+Storage management
+External display
+Project management
+
+
+***Open source**
+
+This revision should be treated as the primary open source hardware baseline.
+

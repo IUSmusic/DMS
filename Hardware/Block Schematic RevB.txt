@@ -1,0 +1,248 @@
+IUS Official Drum Sequencer
+Revision B block schematic
+
+System intent
+
+Open source hardware workstation focused on high quality sampling, soundbank playback, stereo track printing, microphone sampling, touch based DAW editing, and reliable studio grade operation at 24 bit 48 kHz minimum. The architecture must remain responsive under heavy use and must support future timeline editing, waveform navigation, theme changes, external storage, and external display output.
+
+System architecture
+
+                         CONTROL SURFACE BOARD
+
+   Five track sections
+   ARM button per track
+   TRACK REC button per track
+   MIC REC hold button per track
+   PLAY button per track
+   LOOP button per track
+   Track select and function buttons
+   Tile or step grid input section
+   Per track status LEDs
+
+   Master section
+   MIC REC button
+   MIX REC button
+   PLAY STOP PAUSE transport
+   Sustain and master controls
+   Master FX and navigation controls
+
+   Editing controls
+   Dedicated right side jog or scroll wheel
+   Zoom and modifier buttons
+   Grid and snap buttons
+   Touch display support controls if needed
+
+   Electrical interface
+   GPIO matrix and interrupt lines
+   SPI or I2C for LED drivers and expanders
+   ADC channels for analog controls if fitted
+   USB HID style event framing internally if preferred
+                                     |
+                                     v
+
+                    MAIN COMPUTE AND UI BOARD
+
+   Main processor class
+   Embedded Linux class application processor module
+   Example class only: CM4 or CM5 level or equivalent
+
+   Main responsibilities
+   Touch UI and themes
+   DAW waveform monitor rendering
+   Project and session management
+   File browser and soundbank browser
+   External display and HDMI output
+   Touch edit logic and waveform timeline editing
+   Grid overlay and snap engine
+   Storage management across internal and removable media
+   Track state model and arrangement state
+   Communication with real time audio subsystem
+
+   Main interfaces
+   High speed link to real time audio engine
+   DSI or HDMI display path
+   I2C or SPI to touch controller
+   USB host and device support
+   SDIO or PCIe depending on compute module
+   Network optional for future open source workflows
+                                     |
+                high speed control and shared memory or RPC link
+                                     |
+                                     v
+
+                  REAL TIME AUDIO ENGINE BOARD
+
+   Main processor class
+   Dedicated MCU or DSP audio engine
+   Example class only: STM32H7 or equivalent
+
+   Main responsibilities
+   Deterministic audio scheduling
+   Sample triggering
+   Soundbank voice engine
+   Per track playback engine
+   Per track stereo print engine
+   Mic capture engine
+   Master stereo mix recorder
+   Low latency clock synchronized transport
+   Meter and waveform envelope extraction
+   Communication with codec and control surface timing
+
+   Main interfaces
+   I2S or TDM to audio codec domain
+   Word clock and master audio clock distribution
+   High speed link to main compute board
+   Local RAM or SDRAM for active audio buffers
+                                     |
+                           digital audio and clock domain
+                                     |
+                                     v
+
+                       AUDIO I O AND ANALOG BOARD
+
+   Input side
+   Mic input path or paths to low noise preamp to protection to filter to ADC input routing
+   Stereo line input pair 1 left and right to protection to buffer to anti alias filter
+   Stereo line input pair 2 left and right to protection to buffer to anti alias filter
+   Stereo line input pair 3 left and right to protection to buffer to anti alias filter
+
+   Converter and clock section
+   High quality stereo or multichannel codec section
+   Clean low jitter master audio clock
+   Separate analog and digital rails
+
+   Output side
+   DAC output to output filter to line driver to stereo master out left and right
+   DAC output to headphone amplifier to headphone out
+   Optional balanced output stage in later revisions
+
+   Routing notes
+   Track sources are digitized or generated in the digital audio engine
+   Track outputs sum to the stereo master bus in the digital domain
+   Master recorder taps the stereo master bus
+   Optional monitor taps may be exposed pre or post master effects
+
+                                     |
+                                     v
+
+                        DISPLAY AND TOUCH BOARD
+
+   Main display
+   Primary touch monitor for waveform and editing
+
+   Main responsibilities
+   Five track DAW monitor lanes with adaptive lane height
+   Flat line display when silent
+   Waveform display when signal is present
+   Red playhead and optional edit cursor
+   Grid overlay and timeline markers
+   Touch selection of edit point and record start point
+   Theme aware rendering pipeline
+
+   External display support
+   HDMI output mirrors or extends UI for monitor, soundbank, and piano view
+
+Storage and connectivity domain
+
+   Internal storage
+   Boot storage for compute module
+   Project cache and system files
+
+   Removable storage
+   More than one micro SD card slot
+   One slot can be dedicated to project and recording media
+   One slot can be dedicated to sample and soundbank library media
+
+   External storage support
+   USB mass storage support including hard drive or SSD by folder structure
+   App level storage indexer must understand approved project and library layout
+
+   External ports
+   Two USB C ports minimum
+   USB A host ports in addition to current ports
+   HDMI output
+   Existing audio and power ports retained unless revised elsewhere
+
+Audio flow
+
+   Source types
+   Soundbank instrument engine
+   Sample trigger engine
+   Uploaded backing track audio
+   Mic input capture
+   External audio input
+
+   Per track path
+   source select to track engine to track effects or inserts to track recorder tap to track stereo output
+
+   Master path
+   all track stereo outputs to stereo master bus to master effects to master recorder tap to DAC and monitor outputs
+
+   Recorder definitions
+   Track REC records track behavior and output in stereo without mic unless explicitly sourced that way
+   MIC REC on a track records microphone sampling while the user holds the button
+   MIX REC on master records the full stereo master mix including all active tracks and instrument playback
+
+Monitor behavior rules
+
+   The monitor is a DAW waveform display not an oscilloscope and not an EQ meter
+   The monitor frame remains fixed in size
+   Track lanes compress vertically when more tracks are active or engaged
+   Track colors are fixed by track number
+   Track 1 red
+   Track 2 blue
+   Track 3 white
+   Track 4 red
+   Track 5 blue
+   Engaged but silent tracks show a flat line
+   Recording writes waveform from left to right
+   Completed waveforms remain visible for later editing and punch in workflows
+
+Analog versus digital split
+
+   Analog domain
+   Mic preamps
+   Input protection and buffering
+   Anti alias and reconstruction filtering
+   Output line driving
+   Headphone amplification
+   Clean analog power rails and grounding
+
+   Digital domain
+   Sequencing and scheduling
+   Sample and soundbank playback
+   Touch UI and themes
+   Waveform rendering and editing
+   Track and master routing
+   Storage indexing and project management
+   Grid and snap editing logic
+   HDMI and external display handling
+
+Open source structure recommendation
+
+   Publish by module
+   Main compute board
+   Real time audio engine board
+   Audio I O and analog board
+   Control surface board
+   Display and touch board
+
+   Publish with
+   inter board connector definitions
+   power tree
+   clock tree
+   bus map
+   firmware event map
+   storage folder specification
+
+Performance target
+
+   Minimum studio target
+   24 bit 48 kHz
+
+   Future stretch target
+   24 bit 96 kHz if validated without breaking responsiveness
+
+   Core rule
+   Active audio must be RAM buffered in the real time path
+   Direct removable media access must never sit in the hardest real time playback path
