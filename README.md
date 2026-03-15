@@ -1,11 +1,68 @@
-## I/US Official Sequencer ##
+# I/US Official Sequencer
 
- ![DMS Preview](DMS%20Preview01.png)
- ![DMS Preview](DMS%20Preview02.png)
- ![DMS Preview](DMS%20Preview03.png)
+![DMS Preview](DMS%20Preview01.png)
+![DMS Preview](DMS%20Preview02.png)
+![DMS Preview](DMS%20Preview03.png)
 
-**Live demo**
-  * **[Open in New Page](https://iusmusic.github.io/IUS-DMS/)**
+**Live demo**  
+* **[Open in New Page](https://iusmusic.github.io/IUS-DMS/)**
+
+
+## I/US DMS
+
+**I/US-DMS is a browser-based prototype of the I/US Official Sequencer.**
+
+## What this project is
+
+**This repository brings together two connected parts of the same idea:**
+
+**Software prototype**  
+* A browser-based sequencer used to test interface behaviour, playback workflow, sound browsing, track control, recording direction, and interaction design
+
+**Hardware concept**  
+* Early notes, layouts, schematics, and supporting documents for the future physical I/US device
+
+The software side is the hands-on prototype you can run now.  
+The hardware side shows the broader direction the project is moving toward.
+
+
+## Current status
+
+This is an early public prototype shared to organise ideas, test workflows, document progress, and gradually connect the software prototype to the larger hardware vision behind I/US.
+
+The project is now moving beyond the earlier prototype direction and into a more complete **Revision B** architecture focused on:
+
+* high-quality sampling
+* multitrack workflow
+* waveform-based DAW monitoring
+* touch editing
+* modular hardware
+* studio-quality stereo recording
+
+
+## What this repo contains
+
+* Browser prototype (`index.html`)
+* Interface experiments and sequencing workflow development
+* Soundbank structure for sample testing
+* Early hardware and layout notes
+* Revision B block schematic and hardware planning files
+* Industrial design and diagram briefing documents tied to the wider I/US system
+
+
+## Features
+
+* Multi-track sequencing
+* Full piano keyboard path
+* Soundfont-backed piano with fallback behaviour
+* Sample library and custom sample loading
+* BPM control
+* Looping
+* Track playback controls
+* Theme / display switching where available
+* Microphone-related features where supported
+* Record monitor and DAW workflow experiments
+* Soundbank and library workflow support
 
 
 ## Revision B Architecture Update
@@ -46,7 +103,7 @@
 
 * Mic Rec is a separate hold-to-record sampling path
 
-* uploaded audio can be used as a backing-track
+* Uploaded audio can be used as a backing-track / waveform-track source
 
 * Added the requirement for a separate Master Mix Rec path in addition to Master Mic Rec
 
@@ -81,7 +138,7 @@
 * Rewrote the block schematic, hardware architecture, and layout documents around Revision B instead of the earlier Revision A prototype assumptions
 
 * Added dedicated block-diagram and industrial-design briefing documents for future diagramming and hardware drawing work
-You’re right. Here it is in the same Markdown style as the Revision B section.
+
 
 ## 14 March 2026
 
@@ -146,13 +203,24 @@ You’re right. Here it is in the same Markdown style as the Revision B section.
 * Wired the EQ section to the **master bus**
 
 
+## How to open the prototype
+
+* Step 1. Extract the zip file if needed.
+
+* Step 2. Open the I/US Official Sequencer folder.
+
+* Step 3. Open `index.html` in a modern browser.
+
+* Step 4. The prototype will load with the main sequencer view.
+
+
 ## How to use the preview
 
-* Step 1. Open index.html in your browser.
+* Step 1. Open `index.html` in your browser.
 
 * Step 2. Use the main monitor and top controls to access the current workspace.
 
-* Step 3. Open the Library / Sound Bank panel to browse available sounds.
+* Step 3. Open the **Library / Sound Bank** panel to browse available sounds.
 
 * Step 4. Load audio files if you want to add custom sounds.
 
@@ -160,178 +228,111 @@ You’re right. Here it is in the same Markdown style as the Revision B section.
 
 * Step 6. Click a step on any track to place the selected sound into the sequence.
 
-* Step 7. Use the track Play button to hear that track.
+* Step 7. Use the track **Play** button to hear that track.
 
-* Step 8. Use Stop to stop playback and reset the position as needed.
+* Step 8. Use **Stop** to stop playback and reset the position as needed.
 
-* Step 9. Change BPM to alter playback speed.
+* Step 9. Change **BPM** to alter playback speed.
 
-* Step 10. Use the Loop control to keep playback cycling.
+* Step 10. Use the **Loop** control to keep playback cycling.
 
 * Step 11. Use the transport controls to move through playback.
 
 * Step 12. Use the track controls to adjust playback and performance behavior.
 
-* Step 13. Use the Library / Sound Bank monitor settings area for available display and sound options.
+* Step 13. Use the **Library / Sound Bank** monitor settings area for available display and sound options.
 
 * Step 14. Use the full piano keyboard to play notes across a wider range.
 
-* Step 15. Use the theme/display controls if available to switch viewing modes.
+* Step 15. Use the theme / display controls if available to switch viewing modes.
 
-**Custom sounds**
 
-- Place your own sample files in the soundbank samples folder.
+## Custom sounds
 
-- Supported file types depend on browser audio support. Common examples include:
+* Place your own sample files in the `soundbank samples` folder.
 
-- wav
-- mp3
-- ogg
+* Supported file types depend on browser audio support. Common examples include:
 
-- Custom files placed in the samples folder appear in the Custom category in the sound library.
+  * `wav`
+  * `mp3`
+  * `ogg`
 
-- Suggested naming rules for automatic grouping
+* Custom files placed in the samples folder appear in the **Custom** category in the sound library.
 
-- Files that start with kick, snare, clap, or hihat are treated as drum sounds.
+* Suggested naming rules for automatic grouping:
 
-- Files that start with bass are treated as bass sounds.
+  * Files that start with `kick`, `snare`, `clap`, or `hihat` are treated as drum sounds
+  * Files that start with `bass` are treated as bass sounds
+  * Files that start with `synth` are treated as synth sounds
+  * Files that start with `fx` are treated as effects sounds
 
-- Files that start with synth are treated as synth sounds.
-
-- Files that start with fx are treated as effects sounds.
 
 ## Notes
 
-* Browser audio behavior may vary slightly depending on the browser.
+* Browser audio behavior may vary slightly depending on the browser
 
-* Some features may require user interaction before audio playback is allowed.
+* Some features may require user interaction before audio playback is allowed
 
-* Microphone-related features depend on browser permissions.
+* Microphone-related features depend on browser permissions
 
-* Support for custom formats depends on the browser’s built-in audio decoding capabilities.
+* Support for custom formats depends on the browser’s built-in audio decoding capabilities
 
+* This prototype is still evolving and some areas remain experimental
 
-I can also rewrite this into a cleaner README-style section for your .md file.
-
-
-## I/US DMS
-
-**I/US-DMS is a browser-based prototype of the I/US Official Sequencer**
-
-## What this project is
-**This repository brings together two connected parts of the same idea:**
-
-**Software prototype**:
- * **A browser-based sequencer used to test interface behaviour, playback workflow, sound browsing, track control, and interaction design**
-
-**Hardware concept**:
-* **Early notes, layouts, and supporting documents of the future physical I/US device**
-
-The software side is the hands-on prototype you can run now.  
-The hardware side shows the broader direction the project is moving toward.
-
-## What this repo contains
-- Browser prototype (`index.html`)
-- Interface experiments and sequencing workflow development
-- Early hardware and layout notes
-- Soundbank structure for sample testing
-- Concept and planning files tied to the wider I/US system
-
-## Current status
-This is an early public prototype shared to organise ideas, test workflows, document progress, and gradually connect the software prototype to the larger hardware vision behind I/US.
-
-## Features
-- Multi-track step sequencing
-- Sample library and custom sample loading
-- BPM control
-- Looping
-- Theme switching
-- Microphone recording where supported
 
 ## Roadmap
-- I will continue to add features and update the project.
-- Clear hardware documentation
-- Versioned releases
-- Customizable effect plugins
+
+* Continue expanding recording and workflow features
+
+* Continue improving hardware documentation
+
+* Continue aligning the browser prototype with the future physical device
+
+* Add versioned releases
+
+* Expand plugin / effect direction over time
 
 
-  **3 Stereo In + Master Stereo Out Mixer Display**
+## License
 
-  * Added a visual mixer section representing:
-    * **3 stereo inputs** (`L/R × 3`)
-    * **1 stereo master output** (`L/R`)
-  * Gain controls displayed below each stereo pair
+This repository is licensed under the **Mozilla Public License 2.0 (MPL-2.0)**.
 
-### Fixed
+This means:
 
-  **Layout integration**
+* You may use, modify, and distribute this software
 
-  * New monitor, EQ, and mixer elements were added relative to the existing HTML layout system
-  * Preserved the original wide/open page behavior instead of turning the UI into a fixed-size app
+* You may create and sell real products and apps based on this code
 
-  **Library / Monitor workflow**
+* If you distribute modified versions of MPL-covered files, those modified files must remain available under the **MPL-2.0**
 
-  * Library, oscilloscope, and monitor area now coexist in the same left-side module
+* The license applies to the code and covered source files in this repository
 
-  **Master audio routing**
-
-  * Master volume, EQ, and master FX are connected within the audio path
-  * Midi/Bank mode and sustain behavior are integrated into the master track workflow
+A full copy of the license should be included in the repository as `LICENSE`.
 
 
-### How to open the prototype
+## Trademark and brand notice
 
-  * Step 1. Extract the zip file.
-  * Step 2. Open the IUS Official Sequencer folder.
-  * Step 3. Open index.html in a modern browser.
-  * Step 4. The prototype will load with the main sequencer view.
+**I/US**, **IUS**, and **IUS Music** are protected brand identifiers associated with the official I/US project.
 
-### What the prototype does
+The source code in this repository is licensed under the **Mozilla Public License 2.0**.  
+That license applies to the code only.
 
-The prototype provides a multi track step sequencer interface with 31 steps per track. It lets you open the sound library, preview sounds, assign sounds to steps, upload a default track sound, record default track audio from microphone input where supported, start and stop playback, change BPM, use looping, inspect assignments, and switch between dark and light high contrast themes.
+The **MPL-2.0 does not grant any right to use the I/US name, the IUS name, the IUS Music name, the official logo, the visual identity, artwork, images, audio branding, or other protected brand assets** unless explicit written permission is given by **IUS Music**.
 
-### How to use the preview
+All rights in the **I/US**, **IUS**, and **IUS Music** brand identity are reserved.
 
-  * Step 1. Open index.html in your browser.
-  * Step 2. Click the library button in the top bar.
-  * Step 3. Load audio files if you want to add custom sounds.
-  * Step 4. Click a sound in the library to arm it.
-  * Step 5. Click a step on any track to assign the armed sound.
-  * Step 6. Use the play button on a track to hear the sequence.
-  * Step 7. Use stop to reset the track.
-  * Step 8. Change BPM on a track to alter playback speed.
-  * Step 9. Use the loop control to keep playback cycling.
-  * Step 10. Use the theme button in the top bar to switch between dark and light high contrast viewing modes.
-
-  * Place your own sample files in the soundbank samples folder.
-  * Supported file types depend on browser audio support. Common examples include wav mp3 and ogg.
-  * Custom files placed in the samples folder appear in the custom category in the sound library.
-  * Suggested naming rules for automatic grouping are shown below.
-
-  * Files that start with kick or snare or clap or hihat are treated as drum sounds.
-  * Files that start with bass are treated as bass sounds.
-  * Files that start with synth are treated as synth sounds.
-  * Files that start with fx are treated as effects sounds.
+Any fork, modified build, redistributed version, or commercial version must not imply official affiliation with or endorsement by the official **I/US** project unless written permission is given.
 
 
-### License
+## Open-source direction
 
-MIT LICENSE
+This project is intended to grow as an open-source system while still protecting the official I/US identity.
 
-**Copyright 2026 Pezhman Farhangi**
+The code may evolve publicly.  
+The official brand, official device identity, and official release direction remain protected separately.
+
+
+## Copyright
+
+**Copyright 2026 Pezhman Farhangi**  
 **IUS Music**
-
-Permission is hereby granted free of charge to any person obtaining a copy of this software and associated documentation files known as the Software to deal in the Software without restriction including without limitation the rights to use copy modify merge publish distribute sublicense and or sell copies of the Software and to permit persons to whom the Software is furnished to do so subject to the following conditions.
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-The Software is provided as is without warranty of any kind express or implied including but not limited to the warranties of merchantability fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim damages or other liability whether in an action of contract tort or otherwise arising from out of or in connection with the Software or the use or other dealings in the Software.
-
-
-### Trademark and brand notice
-
-**I/US (PRS: IUS) and IUS Music® are protected brand identifiers associated with the official IUS project.**
-
-**The code in this repository is licensed separately under the MIT License. That software license does not grant permission to use the IUS name, the IUS Music name, the official logo, the visual identity, artwork, images, audio branding, or other protected brand assets unless explicit written permission is given by IUS Music.**
-
-**All rights in the IUS, I/US and IUS Music brand identity are reserved.**
