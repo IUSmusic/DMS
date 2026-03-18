@@ -1,3 +1,9 @@
+<a href="LICENSE">
+  <img src="images/license-badge.png" alt="License badge" width="70">
+</a>
+
+
+
 # I/US Official Sequencer
 
 ![DMS Preview](DMS%20Preview01.png)
